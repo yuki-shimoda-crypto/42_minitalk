@@ -9,9 +9,9 @@ static void	ft_sig1(int signal)
 
 	i++;
 	if (signal == SIGUSR1)
-		c = c << 1 + 1;
+		c = (c * 2) + 1;
 	else
-		c = c << 1 + 0;
+		c = (c * 2) + 0;
 	if (i == 8)
 	{
 		write(1, &c, 1);
