@@ -1,33 +1,32 @@
-SRC_SEVER	=	server.c
+SRC_SEVER		=	server.c
+SRC_CLIENT		=	client.c
 
-SRC_CLIENT	=	client.c	
+OBJ_SEVER		=	$(SRC_SEVER:.c=.o)
+OBJ_CLIENT		=	$(SRC_CLIENT:.c=.o)
 
-OBJ_SEVER	=	{SRC_SEVER:.c=.o}
+CC				=	cc
+CFLAGS			=	-Wall -Wextra -Werror
 
-OBJ_CLIENT	=	{SRC_CLIENT:.c=.o}
+NAME			=	minitalk
+NAME_SERVER		=	server
+NAME_CLIENT		=	client
 
-CC			=	cc
+all:			$(NAME)
 
-CFLAGS		=	-Wall -Wextra -Werror
+$(NAME):		$(NAME_SERVER) $(NAME_CLIENT)
 
-SERVER		=	server
+$(NAME_SERVER):	$(OBJ_SEVER)
+				$(CC) $(CFLAGS) $(OBJ_SEVER) -o $(NAME_SERVER)
 
-CLIENT		=	client
+$(NAME_CLIENT):	$(OBJ_CLIENT)
+				$(CC) $(CFLAGS) $(OBJ_CLIENT) -o $(NAME_CLIENT)
 
-all:		$(NAME)
-
-$(NAME):	$(SERVER) $(CLIENT)
-			$(CC) $(CFLAGS) $(SRC_SEVER) -o $(SERVER)
-			$(CC) $(CFLAGS) $(SRC_CLIENT) -o $(CLIENT)
-
-client:		
-			$CC
-re:			fclean all
+re:				fclean all
 
 clean:
-			rm -f $(OBJ_SEVER) $(OBJ_CLIENT)
+				rm -f $(OBJ_SEVER) $(OBJ_CLIENT)
 
-fclean:		clean
-			rm -f $(NAME)
+fclean:			clean
+				rm -f $(NAME_SERVER) $(NAME_CLIENT)
 
-.PHONY:		all re clean fclean
+.PHONY:			all re clean fclean
