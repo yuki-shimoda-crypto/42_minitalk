@@ -1,5 +1,6 @@
 SRC_SEVER		=	server.c
-SRC_CLIENT		=	client.c
+SRC_CLIENT		=	client.c	\
+					ft_atoi.c
 
 OBJ_SEVER		=	$(SRC_SEVER:.c=.o)
 OBJ_CLIENT		=	$(SRC_CLIENT:.c=.o)
