@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_put_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 18:45:21 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/11 20:19:54 by yshimoda         ###   ########.fr       */
+/*   Created: 2022/08/27 15:46:49 by yshimoda          #+#    #+#             */
+/*   Updated: 2022/10/11 20:56:32 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "ft_printf.h"
 
-# include <limits.h>
-# include <stdlib.h>
-# include <signal.h>
-# include <unistd.h>
+ssize_t	ft_put_str(char *str)
+{
+	if (!str)
+		return (write(1, "(null)", 6));
+	return (write(1, str, ft_strlen(str)));
+}
 
-int	ft_atoi(const char *str);
-
-#endif
+ssize_t	ft_put_char(char c)
+{
+	return (write(1, &c, 1));
+}

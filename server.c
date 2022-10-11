@@ -6,12 +6,10 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:43:45 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/11 18:45:08 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/11 20:19:47 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <signal.h>
-#include <unistd.h>
 #include <stdio.h>
 
 static void	ft_sig1(int signal)

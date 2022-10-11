@@ -6,12 +6,11 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:43:43 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/11 20:00:34 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/11 20:13:30 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <signal.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include "minitalk.h"
