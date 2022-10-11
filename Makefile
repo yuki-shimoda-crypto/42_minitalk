@@ -1,6 +1,5 @@
 SRC_SEVER		=	server.c
-SRC_CLIENT		=	client.c	\
-					ft_atoi.c
+SRC_CLIENT		=	client.c
 
 OBJ_SEVER		=	$(SRC_SEVER:.c=.o)
 OBJ_CLIENT		=	$(SRC_CLIENT:.c=.o)
@@ -17,16 +16,17 @@ all:			$(NAME)
 $(NAME):		$(NAME_SERVER) $(NAME_CLIENT)
 
 $(NAME_SERVER):	$(OBJ_SEVER)
-				make -C prntf
-				$(CC) $(CFLAGS) $(OBJ_SEVER) libftprintf.a -o $(NAME_SERVER)
+				make -C printf
+				$(CC) $(CFLAGS) $(OBJ_SEVER) printf/libftprintf.a -o $(NAME_SERVER)
 
 $(NAME_CLIENT):	$(OBJ_CLIENT)
-				make -C prntf
-				$(CC) $(CFLAGS) $(OBJ_CLIENT) libftprintf.a -o $(NAME_CLIENT)
+				make -C printf
+				$(CC) $(CFLAGS) $(OBJ_CLIENT) printf/libftprintf.a -o $(NAME_CLIENT)
 
 re:				fclean all
 
 clean:
+				make fclean -C printf
 				rm -f $(OBJ_SEVER) $(OBJ_CLIENT)
 
 fclean:			clean

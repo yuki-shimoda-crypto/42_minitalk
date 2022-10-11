@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:45:21 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/11 20:19:54 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/11 23:33:40 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 # include <signal.h>
 # include <unistd.h>
 
-int	ft_atoi(const char *str);
+int	ft_printf(const char *format, ...);
 
 #endif

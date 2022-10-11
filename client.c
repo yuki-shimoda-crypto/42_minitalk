@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:43:43 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/11 22:00:36 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/11 23:34:13 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	main(int argc, char const *argv[])
 
 	if (argc == 3)
 	{
-		pid = atoi(argv[1]);
+		pid = ft_atoi(argv[1]);
 		if (pid <= 0 || kill(pid, 0) == -1)
 			return (1);
 		send_sig(argv, pid);
