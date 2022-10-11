@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:43:45 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/11 21:36:28 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/11 22:23:03 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(void)
 {
 	sigset_t	set;
 
-	printf("%d\n", getpid());
+	ft_printf("%d\n", getpid());
 	if (sigemptyset(&set))
 		return (1);
 	if (sigaddset(&set, SIGUSR1))

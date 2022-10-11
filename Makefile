@@ -17,10 +17,12 @@ all:			$(NAME)
 $(NAME):		$(NAME_SERVER) $(NAME_CLIENT)
 
 $(NAME_SERVER):	$(OBJ_SEVER)
-				$(CC) $(CFLAGS) $(OBJ_SEVER) -o $(NAME_SERVER)
+				make -C prntf
+				$(CC) $(CFLAGS) $(OBJ_SEVER) libftprintf.a -o $(NAME_SERVER)
 
 $(NAME_CLIENT):	$(OBJ_CLIENT)
-				$(CC) $(CFLAGS) $(OBJ_CLIENT) -o $(NAME_CLIENT)
+				make -C prntf
+				$(CC) $(CFLAGS) $(OBJ_CLIENT) libftprintf.a -o $(NAME_CLIENT)
 
 re:				fclean all
 
