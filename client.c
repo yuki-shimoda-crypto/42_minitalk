@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:43:43 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/11 23:34:13 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/12 15:39:39 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	send_sig(char const **argv, int pid)
 			else
 				kill(pid, SIGUSR2);
 			j++;
-			usleep(100);
+			usleep(500);
 		}
 		if (!argv[2][i])
 			break ;
