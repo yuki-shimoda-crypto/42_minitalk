@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:43:45 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/11 22:23:03 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/12 15:47:51 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static void	ft_sig1(int signal)
 
 	i++;
 	if (signal == SIGUSR1)
-		c = (c * 2) + 1;
+		c = (c << 1) + 1;
 	else
-		c = (c * 2) + 0;
+		c = (c << 1) + 0;
 	if (i == 8)
 	{
 		write(1, &c, 1);
