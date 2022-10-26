@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:43:45 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/12 16:23:23 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/24 02:42:09 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int	main(void)
 		return (1);
 	if (sigaddset(&set, SIGUSR2))
 		return (1);
+	// sigaddset
+	// sigaction()
 	signal(SIGUSR1, &ft_sig1);
 	signal(SIGUSR2, &ft_sig1);
 	while (1)

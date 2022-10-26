@@ -6,11 +6,17 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:43:43 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/12 16:09:44 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/13 21:45:12 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
+static void	ft_error(void)
+{
+	ft_printf("error\n");
+	exit(1);
+}
 
 static int	ft_check_over(int sign, long ans, char c)
 {
@@ -55,7 +61,7 @@ static void	send_sig(char const **argv, int pid)
 {
 	size_t	i;
 	size_t	j;
-	char	c;
+	int		num;
 
 	i = 0;
 	while (1)
@@ -63,12 +69,12 @@ static void	send_sig(char const **argv, int pid)
 		j = 0;
 		while (j != 8)
 		{
-			c = argv[2][i];
-			c = (c >> (7 - j)) & 1;
-			if (c)
-				kill(pid, SIGUSR1);
+			if ((argv[2][i] >> (7 - j)) & 1)
+				num = kill(pid, SIGUSR1);
 			else
-				kill(pid, SIGUSR2);
+				num = kill(pid, SIGUSR2);
+			if (num == -1)
+				ft_error();
 			j++;
 			usleep(500);
 		}
@@ -86,7 +92,7 @@ int	main(int argc, char const *argv[])
 	{
 		pid = ft_atoi(argv[1]);
 		if (pid <= 0 || kill(pid, 0) == -1)
-			return (1);
+			ft_error();
 		send_sig(argv, pid);
 	}
 	else
